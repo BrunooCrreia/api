@@ -23,11 +23,11 @@ public class TaskService {
         @SuppressWarnings("null")
         Optional<Task> task = this.taskRepository.findById(id);
         return task.orElseThrow(() ->
-                new RuntimeException("Usuário não encontrado! ID: " + id + ", Tipo: " + Task.class.getName()));
+                new RuntimeException("Tarefa não encontrada! Id: " + id + ", Tipo: " + Task.class.getName()));
     }
 
     public List<Task> findByAllId(Long userId){
-        List<Task> tasks = this.taskRepository.findByUser_id(userId);
+        List<Task> tasks = this.taskRepository.findByUser_Id(userId);
         return tasks;
     }
 
